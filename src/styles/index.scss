@@ -24,10 +24,10 @@
     border-radius: 50%;
     padding: 4px;
     cursor: pointer;
-    &.red{background-color: #990000;}
-    &.yellow{background-color: #CC6600;}
-    &.green{background-color: #009933}
-    &.selected{box-shadow: #f8ffcc 0px 0px 50px 20px;}
+    &.red{background-color: #990000; opacity: 0.5;}
+    &.yellow{background-color: #CC6600; opacity: 0.5;}
+    &.green{background-color: #009933; opacity: 0.5;}
+    &.selected{box-shadow: #f8ffcc 0px 0px 50px 20px; opacity: 1;}
     &.expanded { 
         transform: scale(1.1);
         border: white 1px solid;
