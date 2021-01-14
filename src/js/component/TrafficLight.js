@@ -4,31 +4,36 @@ export function TrafficLight() {
 	const [light, setLight] = useState("");
 	//flag variable in this case is light
 
-	useEffect(
-		() => {
-			const interval = setInterval(() => {
-				//console.log("interval triggered");
-				light == "red"
-					? setLight("yellow")
-					: light == "yellow"
-						? setLight("green")
-						: setLight("red");
-			}, 1000);
-			return () => clearInterval(interval);
-		},
-		[light]
-	);
+	// useEffect(
+	// 	() => {
+	// 		const interval = setInterval(() => {
+	// 			//console.log("interval triggered");
+	// 			light == "red"
+	// 				? setLight("yellow")
+	// 				: light == "yellow"
+	// 					? setLight("green")
+	// 					: setLight("red");
+	// 		}, 1000);
+	// 		return () => clearInterval(interval);
+	// 	},
+	// 	[light]
+	// );
+
+	const interval = () =>
+		setInterval(() => {
+			console.log("interval triggered");
+			light == "red"
+				? setLight("yellow")
+				: light == "yellow"
+					? setLight("green")
+					: setLight("red");
+		}, 3000);
 
 	return (
 		<div>
-			{/* <button
-				onClick={}>
-				Start Interval
-			</button> */}
-			{/* 
-			<button onClick={clearInterval(setInterval())}>
-				Stop Interval
-			</button> */}
+			<button onClick={() => interval()}>Start Interval</button>
+
+			<button onClick={clearInterval(interval)}>Stop Interval</button>
 
 			<div className="topPole" />
 			<div className="trafficContainer">
